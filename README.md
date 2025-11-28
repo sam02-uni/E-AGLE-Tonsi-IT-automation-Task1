@@ -13,8 +13,8 @@
 9) Move to the NocoDB directory inside the github repo
 10) Run "docker compose up -d"
 11) Open a browser on 'http://localhost:8080/'
-12) Login with the credentials given in the .env file, if you don't have one, create your personal .env then login with yours credential. Pay attention on the name of the variables
-13) Run the NocoDB_script.py via command "python3 NocoDB_script.py" or via VSCode (or another IDE, I use VS Code). If you create your personal .env you need to put all the API url necessary to the python script to work 
+12) Login with the credentials given in the .env file, if you don't have one, create your personal .env inside the direcotry with the scripts then login with yours credentials. Pay attention on the name of the variables. If you create your personal .env you need to put all the API url necessary to the python script to work
+13) Run the NocoDB_script.py via command "python3 NocoDB_script.py" or via VSCode (or another IDE, I use VS Code).  
 14) At this point the DB must be populated, if you don't see any changes reload the page
 
 You can find an API documentation for NocoDB at the following [link](https://nocodb.com/apis/v2/data)
