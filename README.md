@@ -9,12 +9,13 @@
 5) Add your user to the docker group you can find the guide [here](https://docs.docker.com/engine/install/linux-postinstall/)
 6) Download the repository by github via command or using the GUI
 7) Remove all the .gitkeep from the empty directory that are inside the NocoDB directory (nc_data/_data, pg_commit_ts, pg_dynshmem, pg_notify, pg_replslot, pg_serial, pg_snapshots, pg_stat, pg_stat_tmp, pg_tblspc, pg_twophase)
-8) Move to the NocoDB directory inside the github repo
-9) Run "docker compose up -d"
-10) Open a browser on 'http://localhost:8080/'
-11) Login with the credentials given in the .env file, if you don't have one, create your personal .env then login with yours credential. Pay attention on the name of the variables
-12) Run the NocoDB_script.py via command "python3 NocoDB_script.py" or via VSCode (or another IDE, I use VS Code). If you create your personal .env you need to put all the API url necessary to the python script to work 
-13) At this point the DB must be populated, if you don't see any changes reload the page
+8) Create inside the direcotry NocoDB/db_data/pg_logical two directory named snapshots and mappings  
+9) Move to the NocoDB directory inside the github repo
+10) Run "docker compose up -d"
+11) Open a browser on 'http://localhost:8080/'
+12) Login with the credentials given in the .env file, if you don't have one, create your personal .env then login with yours credential. Pay attention on the name of the variables
+13) Run the NocoDB_script.py via command "python3 NocoDB_script.py" or via VSCode (or another IDE, I use VS Code). If you create your personal .env you need to put all the API url necessary to the python script to work 
+14) At this point the DB must be populated, if you don't see any changes reload the page
 
 You can find an API documentation for NocoDB at the following [link](https://nocodb.com/apis/v2/data)
 
