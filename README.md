@@ -1,32 +1,176 @@
-# E-AGLE-Tonsi-IT-automation-Task1
+# E-AGLE Tonsi – IT Automation Task 1  
+Setup Guide for **NocoDB + Telegram Bot** on Linux (Ubuntu)
 
-## For the DB enviroment on Linux (I use Ubuntu)
+## 🗄️ Database Environment Setup (NocoDB on Linux)
 
-1) Open a terminal
-2) Install docker via the official guide at the following [link](https://docs.docker.com/engine/install/ubuntu/) (I use the following version: Docker version 29.0.4, it works also with the 29.1.0 version)
-3) Install NocoDB using this [guide](https://nocodb.com/docs/self-hosting/installation/docker-compose)
-4) Install python and pip (I use this version: Python 3.10.12) and the dotenv library. You can also setup a Python Virtual Enviroment (venv) here the [guide](https://www.hostinger.com/tutorials/how-to-create-a-python-virtual-environment?utm_campaign=Generic-Tutorials-DSA|NT:Se|Lang:EN|LO:IT&utm_medium=ppc&gad_source=1&gad_campaignid=21361943402&gclid=EAIaIQobChMIgIObu_aSkQMVgJ2DBx1Q3BGTEAAYASAAEgJJNPD_BwE).
-5) Add your user to the docker group you can find the guide [here](https://docs.docker.com/engine/install/linux-postinstall/)
-6) Download the repository by github via command or using the GUI
-7) Remove all the .gitkeep from the empty directory that are inside the NocoDB directory (nc_data/_data, pg_commit_ts, pg_dynshmem, pg_notify, pg_replslot, pg_serial, pg_snapshots, pg_stat, pg_stat_tmp, pg_tblspc, pg_twophase)
-8) Create inside the direcotry NocoDB/db_data/pg_logical two directory named snapshots and mappings  
-9) Move to the NocoDB directory inside the github repo
-10) Run "docker compose up -d"
-11) Open a browser on 'http://localhost:8080/'
-12) Login with the credentials given in the .env file, if you don't have one, create your personal .env inside the direcotry with the scripts then login with yours credentials. Pay attention on the name of the variables. If you create your personal .env you need to put all the API url necessary to the python script to work
-13) Run the NocoDB_script.py via command "python3 NocoDB_script.py" or via VSCode (or another IDE, I use VS Code).  
-14) At this point the DB must be populated, if you don't see any changes reload the page
+> **Requirements:** Ubuntu Linux, basic knowledge of Docker and Python.
 
-You can find an API documentation for NocoDB at the following [link](https://nocodb.com/apis/v2/data)
+---
 
-PS. You can erase all the tables except for the Lessons table, otherwise the telegram bot return nothing or an error if you use the /lessons command
+## **1) Install Docker**
+Open a terminal and install Docker following the official guide:  
+👉 https://docs.docker.com/engine/install/ubuntu/
 
-## For the telegram bot:
+**Tested versions:**  
+- Docker **29.0.4**  
+- Docker **29.1.0**
 
-First setup the NocoDB enviroment if you want to use all the commands. If you don't setup the db you can encounter some issues.
+---
 
-1) Install the python-telegram-bot library via pip "pip install python-telegram-bot" (I use the 22.5 version). You can also use the virtual enviroment that you created before. 
-2) Run the Telegram_script.py via command "python3 Telegram_script.py" or via VSCode (or another IDE, I use VS Code)
-3) Go to the Telegram app and use this link 't.me/Daily_2_Bot'
-4) Type /help to see the list of all commands available
+## **2) Install NocoDB**
+Follow the official installation guide:  
+👉 https://nocodb.com/docs/self-hosting/installation/docker-compose
 
+---
+
+## **3) Install Python and Required Libraries**
+Install **Python 3.10+**, **pip**, and **python-dotenv**:
+
+```bash
+sudo apt install python3 python3-pip
+pip install python-dotenv
+```
+
+Optional but recommended: create a Python virtual environment (venv).  
+Guide: https://www.hostinger.com/tutorials/how-to-create-a-python-virtual-environment
+
+---
+
+## **4) Add Your User to the Docker Group**
+Follow the official post-installation steps:  
+👉 https://docs.docker.com/engine/install/linux-postinstall/
+
+This allows Docker to run without `sudo`.
+
+---
+
+## **5) Download the GitHub Repository**
+Clone using a terminal:
+
+```bash
+git clone <REPOSITORY_URL>
+```
+
+or download via the GitHub interface.
+
+---
+
+## **6) Clean NocoDB Directories**
+Inside the repository, go to the `NocoDB/` directory and remove all `.gitkeep` files from empty folders:
+
+Directories that must NOT contain `.gitkeep`:
+
+```
+nc_data/_data
+pg_commit_ts
+pg_dynshmem
+pg_notify
+pg_replslot
+pg_serial
+pg_snapshots
+pg_stat
+pg_stat_tmp
+pg_tblspc
+pg_twophase
+```
+
+---
+
+## **7) Create Required Logical Directories**
+Inside `NocoDB/db_data/pg_logical/`, create two directories:
+
+```
+snapshots
+mappings
+```
+
+---
+
+## **8) Start NocoDB via Docker**
+Move into the `NocoDB/` folder and run:
+
+```bash
+docker compose up -d
+```
+
+The containers will start in detached mode.
+
+---
+
+## **9) Access the NocoDB Web Interface**
+Open your browser and go to:
+
+```
+http://localhost:8080/
+```
+
+---
+
+## **10) Login and Configure Environment Variables**
+Login using the credentials defined in your `.env` file.
+
+If you do NOT have a `.env`:
+
+1. Create your personal `.env` in the same directory as the Python scripts.  
+2. Ensure all required variables (API URLs, authentication keys, etc.) are included.  
+3. Make sure variable names match exactly what the Python scripts expect.
+
+⚠️ Missing or incorrect variables will cause the population script to fail.
+
+---
+
+## **11) Populate the Database**
+Run the script:
+
+```bash
+python3 NocoDB_script.py
+```
+
+or execute it in VS Code (or another IDE).
+
+If the data does not appear immediately, refresh the browser page.
+
+📌 **Important:**  
+Do **not** delete the **Lessons** table.  
+The Telegram bot relies on it for the `/lessons` command.
+
+---
+
+# 🤖 Telegram Bot Setup
+
+> To access all bot commands, make sure your NocoDB environment is correctly configured.
+
+---
+
+## **1) Install python-telegram-bot**
+Recommended version: **22.5**
+
+```bash
+pip install python-telegram-bot==22.5
+```
+
+---
+
+## **2) Run the Telegram Bot Script**
+
+```bash
+python3 Telegram_script.py
+```
+
+---
+
+## **3) Access the Bot on Telegram**
+Open the link:
+
+```
+t.me/Daily_2_Bot
+```
+
+---
+
+## **4) View Available Commands**
+In the Telegram chat, type:
+
+```
+/help
+```
