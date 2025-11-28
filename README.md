@@ -64,16 +64,16 @@ Directories that must NOT contain `.gitkeep`:
 
 ```
 nc_data/_data
-pg_commit_ts
-pg_dynshmem
-pg_notify
-pg_replslot
-pg_serial
-pg_snapshots
-pg_stat
-pg_stat_tmp
-pg_tblspc
-pg_twophase
+db_data/pg_commit_ts
+db_data/pg_dynshmem
+db_data/pg_notify
+db_data/pg_replslot
+db_data/pg_serial
+db_data/pg_snapshots
+db_data/pg_stat
+db_data/pg_stat_tmp
+db_data/pg_tblspc
+db_data/pg_twophase
 ```
 
 ---
