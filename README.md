@@ -20,6 +20,7 @@ https://docs.docker.com/engine/install/ubuntu/
 ## **2) Install NocoDB**
 Follow the official installation guide:  
 https://nocodb.com/docs/self-hosting/installation/docker-compose
+
 You can find an API documentation for NocoDB at the following [link](https://nocodb.com/apis/v2/data)
 
 ---
