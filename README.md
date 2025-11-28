@@ -1,7 +1,7 @@
 # E-AGLE Tonsi – IT Automation Task 1  
 Setup Guide for **NocoDB + Telegram Bot** on Linux (Ubuntu)
 
-## 🗄️ Database Environment Setup (NocoDB on Linux)
+## Database Environment Setup (NocoDB on Linux)
 
 > **Requirements:** Ubuntu Linux, basic knowledge of Docker and Python.
 
@@ -9,7 +9,7 @@ Setup Guide for **NocoDB + Telegram Bot** on Linux (Ubuntu)
 
 ## **1) Install Docker**
 Open a terminal and install Docker following the official guide:  
-👉 https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/engine/install/ubuntu/
 
 **Tested versions:**  
 - Docker **29.0.4**  
@@ -19,7 +19,7 @@ Open a terminal and install Docker following the official guide:
 
 ## **2) Install NocoDB**
 Follow the official installation guide:  
-👉 https://nocodb.com/docs/self-hosting/installation/docker-compose
+https://nocodb.com/docs/self-hosting/installation/docker-compose
 
 ---
 
@@ -38,7 +38,7 @@ Guide: https://www.hostinger.com/tutorials/how-to-create-a-python-virtual-enviro
 
 ## **4) Add Your User to the Docker Group**
 Follow the official post-installation steps:  
-👉 https://docs.docker.com/engine/install/linux-postinstall/
+https://docs.docker.com/engine/install/linux-postinstall/
 
 This allows Docker to run without `sudo`.
 
@@ -115,7 +115,7 @@ If you do NOT have a `.env`:
 2. Ensure all required variables (API URLs, authentication keys, etc.) are included.  
 3. Make sure variable names match exactly what the Python scripts expect.
 
-⚠️ Missing or incorrect variables will cause the population script to fail.
+Missing or incorrect variables will cause the population script to fail.
 
 ---
 
@@ -130,13 +130,13 @@ or execute it in VS Code (or another IDE).
 
 If the data does not appear immediately, refresh the browser page.
 
-📌 **Important:**  
+**Important:**  
 Do **not** delete the **Lessons** table.  
 The Telegram bot relies on it for the `/lessons` command.
 
 ---
 
-# 🤖 Telegram Bot Setup
+# Telegram Bot Setup
 
 > To access all bot commands, make sure your NocoDB environment is correctly configured.
 
