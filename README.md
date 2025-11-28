@@ -89,7 +89,7 @@ mappings
 ---
 
 ## **8) Start NocoDB via Docker**
-Move into the `NocoDB/` folder and run:
+Move into the `NocoDB/` folder using the terminal and run:
 
 ```bash
 docker compose up -d
