@@ -140,7 +140,7 @@ The Telegram bot relies on it for the `/lessons` command.
 
 # Telegram Bot Setup
 
-> To access all bot commands, make sure your NocoDB environment is correctly configured.
+> To access all bot commands, make sure your NocoDB environment is correctly configured and it is running.
 
 ---
 
