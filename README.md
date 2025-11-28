@@ -3,7 +3,7 @@ Setup Guide for **NocoDB + Telegram Bot** on Linux (Ubuntu)
 
 ## Database Environment Setup (NocoDB on Linux)
 
-> **Requirements:** Ubuntu Linux, basic knowledge of Docker and Python.
+> **Requirements:** Ubuntu
 
 ---
 
