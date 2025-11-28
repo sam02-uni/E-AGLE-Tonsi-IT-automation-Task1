@@ -5,7 +5,7 @@
 1) Open a terminal
 2) Install docker via the official guide at the following [link](https://docs.docker.com/engine/install/ubuntu/) (I use the following version: Docker version 29.0.4, it works also with the 29.1.0 version)
 3) Install NocoDB using this [guide](https://nocodb.com/docs/self-hosting/installation/docker-compose)
-4) Install python and pip (I use this version: Python 3.10.12) and the dotenv library
+4) Install python and pip (I use this version: Python 3.10.12) and the dotenv library. You can also setup a Python Virtual Enviroment (venv) here the [guide](https://www.hostinger.com/tutorials/how-to-create-a-python-virtual-environment?utm_campaign=Generic-Tutorials-DSA|NT:Se|Lang:EN|LO:IT&utm_medium=ppc&gad_source=1&gad_campaignid=21361943402&gclid=EAIaIQobChMIgIObu_aSkQMVgJ2DBx1Q3BGTEAAYASAAEgJJNPD_BwE).
 5) Add your user to the docker group you can find the guide [here](https://docs.docker.com/engine/install/linux-postinstall/)
 6) Download the repository by github via command or using the GUI
 7) Remove all the .gitkeep from the empty directory that are inside the NocoDB directory (nc_data/_data, pg_commit_ts, pg_dynshmem, pg_notify, pg_replslot, pg_serial, pg_snapshots, pg_stat, pg_stat_tmp, pg_tblspc, pg_twophase)
@@ -25,7 +25,7 @@ PS. You can erase all the tables except for the Lessons table, otherwise the tel
 
 First setup the NocoDB enviroment if you want to use all the commands. If you don't setup the db you can encounter some issues.
 
-1) Install the python-telegram-bot library via pip "pip install python-telegram-bot" (I use the 22.5 version). You can also setup a Python Virtual Enviroment (venv) here the [guide](https://www.hostinger.com/tutorials/how-to-create-a-python-virtual-environment?utm_campaign=Generic-Tutorials-DSA|NT:Se|Lang:EN|LO:IT&utm_medium=ppc&gad_source=1&gad_campaignid=21361943402&gclid=EAIaIQobChMIgIObu_aSkQMVgJ2DBx1Q3BGTEAAYASAAEgJJNPD_BwE). I install everything on my machine and not on the virtual enviroment because I have a lot of space.
+1) Install the python-telegram-bot library via pip "pip install python-telegram-bot" (I use the 22.5 version). You can also use the virtual enviroment that you created before. 
 2) Run the Telegram_script.py via command "python3 Telegram_script.py" or via VSCode (or another IDE, I use VS Code)
 3) Go to the Telegram app and use this link 't.me/Daily_2_Bot'
 4) Type /help to see the list of all commands available
