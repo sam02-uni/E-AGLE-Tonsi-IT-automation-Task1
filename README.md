@@ -5,7 +5,7 @@
 1) Open a terminal
 2) Install docker via the official guide at the following [link](https://docs.docker.com/engine/install/ubuntu/) (I use the following version: Docker version 29.0.4, it works also with the 29.1.0 version)
 3) Install NocoDB using this [guide](https://nocodb.com/docs/self-hosting/installation/docker-compose)
-4) Install python and pip (I use this version: Python 3.10.12)
+4) Install python and pip (I use this version: Python 3.10.12) and the dotenv library
 5) Add your user to the docker group you can find the guide [here](https://docs.docker.com/engine/install/linux-postinstall/)
 6) Download the repository by github via command or using the GUI
 7) Remove all the .gitkeep from the empty directory that are inside the NocoDB directory (nc_data/_data, pg_commit_ts, pg_dynshmem, pg_notify, pg_replslot, pg_serial, pg_snapshots, pg_stat, pg_stat_tmp, pg_tblspc, pg_twophase)
@@ -18,6 +18,8 @@
 14) At this point the DB must be populated, if you don't see any changes reload the page
 
 You can find an API documentation for NocoDB at the following [link](https://nocodb.com/apis/v2/data)
+
+PS. You can erase all the tables except for the Lessons table, otherwise the telegram bot return nothing or an error if you use the /lessons command
 
 ## For the telegram bot:
 
